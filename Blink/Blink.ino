@@ -24,22 +24,19 @@
 
 // the setup function runs once when you press reset or power the board
 void setup() {
-  int timesToBlink = 2;
+  int timesToBlink = 10; // Set how many times the LED will blink
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
-  if (timesToBlink > 4) {
-    int timesToBlink = 1;
-    timesToBlink = timesToBlink + 2 * 4;
-    digitalWrite(LED_BUILTIN, LOW);
-  } else {
-    digitalWrite(LED_BUILTIN, HIGH);
+  
+  // Use a for loop to repeat the LED blinking a number of times
+  for (int i = 0; i < timesToBlink; i++) {
+    digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+    delay(1000);                      // wait for a second
+    digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+    delay(1000);                      // wait for a second
   }
 }
 
-// the loop function runs over and over again forever
 void loop() {
-  //   digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  //   delay(1000);                      // wait for a second
-  //   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-  //   delay(1000);                      // wait for a second
+  // the loop function runs over and over again forever
 }
